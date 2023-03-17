@@ -19,4 +19,8 @@ let rec update s i v =
     Nil -> failwith "out of bound"
   | Cons (h, t) ->
       if i = 0 then Cons (v, t) else cons h (update t (i-1) v)
+let rec suffixe s =
+  match s with
+    Nil -> Nil
+  | Cons (_, t) -> cons (s) (suffixe t)
 

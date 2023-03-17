@@ -1,6 +1,3 @@
 (test
  (name gypse)
  (libraries data))
-(env
-  (dev
-    (flags (:standard -w -32))))
