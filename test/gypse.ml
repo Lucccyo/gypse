@@ -1,6 +1,5 @@
-(* Format.printf "bonjour@." *)
+open Data
 
-(* let _ = Stack.empty in *)
 let () =
-  let _ = Data.Stack.empty in
-  ()
+  let s = Stack.cons 2 Stack.empty in
+  Format.printf "head = %d@." (Stack.head s)
