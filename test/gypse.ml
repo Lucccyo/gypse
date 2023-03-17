@@ -1,4 +1,4 @@
 (* Format.printf "bonjour@." *)
 
-let _ = Stack.empty in
+(* let _ = Stack.empty in *)
 ()

@@ -1,2 +1,3 @@
 (test
- (name gypse))
+ (name gypse)
+ (libraries data))
