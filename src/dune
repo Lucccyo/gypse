@@ -1,0 +1,4 @@
+(executable
+ (public_name gypse)
+ (name main)
+ (libraries gypse))
