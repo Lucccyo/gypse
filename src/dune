@@ -1,4 +1,4 @@
 (executable
  (public_name gypse)
  (name main)
- (libraries gypse data))
+ (libraries data))
