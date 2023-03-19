@@ -3,6 +3,7 @@ type 'a t
     model length: int *)
 val empty : 'a t
 (*@ s = empty
+    pure
     ensures s.length = 0 *)
 val is_empty : 'a t -> bool
 (*@ b = is_empty s
@@ -10,7 +11,9 @@ val is_empty : 'a t -> bool
     ensures b <-> s.length = 0 *)
 val cons : 'a -> 'a t -> 'a t
 (*@ t = cons v s
-    ensures t.length = s.length + 1 *)
+    pure
+    ensures t.length = s.length + 1
+    ensures v = List.hd t.stack *)
 val head : 'a t -> 'a
 (*@ h = head t
     requires t.length > 0 *)
@@ -20,6 +23,7 @@ val tail : 'a t -> 'a t
     ensures t.length = s.length - 1 *)
 val concat : 'a t -> 'a t -> 'a t
 (*@ t = concat s1 s2
+    pure
     ensures t.length = s1.length + s2.length *)
 val update : 'a t -> int -> 'a -> 'a t
 (*@ t = update s i v
@@ -28,6 +32,7 @@ val update : 'a t -> int -> 'a -> 'a t
     ensures s.length = t.length *)
 val suffixe : 'a t -> 'a t t
 (*@ tt = suffixe t
+    pure
     ensures tt.length = t.length + 1 *)
 (* je veux dire que:
     pour toutes les valeurs à l'indice i dans t,
