@@ -40,3 +40,20 @@ module type Stack = sig
       pour toutes les valeurs à l'indice i dans t,
       on a une stack de taille (t.length - i) dans tt *)
 end
+
+module type Set = sig
+  type elem
+  type set
+
+  val empty : set
+  val insert : elem -> set -> set
+  val member : elem -> set -> bool
+end
+
+module type Ordered = sig
+  type t
+
+  val eq : t -> t -> bool
+  val lt : t -> t -> bool
+  val leq : t -> t -> bool
+end
